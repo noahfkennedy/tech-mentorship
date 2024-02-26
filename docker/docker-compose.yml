@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  model-development:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${PWD}/./dbt:/dbt
+    ports:
+      - "8081:8081"
+    environment:
+      - ENV=prd

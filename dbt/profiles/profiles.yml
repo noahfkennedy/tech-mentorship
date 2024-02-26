@@ -1,0 +1,12 @@
+tech_mentorship:
+  target: "prd"
+  outputs:
+    prd:
+      type: bigquery
+      method: oauth
+      project: "tech-mentorship-2024"
+      dataset: "demo_project"
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1

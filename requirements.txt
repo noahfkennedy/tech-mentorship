@@ -1,0 +1,3 @@
+dbt-bigquery==1.6.1
+elementary-data[bigquery]==0.10.0
+
