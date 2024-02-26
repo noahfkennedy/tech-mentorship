@@ -47,10 +47,9 @@ def dbt_run(logger, profile, models, exclude):
     return subprocess.run(dbt_cmd)
 
 
-def run_interactive_dbt(logger):
+def run_interactive_dbt(logger, project_id):
     os.system("clear")
 
-    project_id = 'tech-mentorship-2024'
     target_dataset = "tech_mart"
 
     logger.info(f"Running entrypoint.py with project:{project_id} target: {target_dataset}")
@@ -71,9 +70,10 @@ if __name__ == "__main__":
     ENV = 'prd'
 
     # DE Mart contributors will read data from our prod BQ but write to their dedicated GCP project when developing
-    os.environ["PROJECT_ID"] = 'tech-mentorship-2024'
+    project_id = 'tech-mentorship-2024'
+    os.environ["PROJECT_ID"] = project_id
 
     install_dbt_dependencies(LOGGER)
-    run_interactive_dbt(logger=LOGGER)
+    run_interactive_dbt(logger=LOGGER, project_id=project_id)
 
     LOGGER.info("=== END ===")
