@@ -51,7 +51,7 @@ def run_interactive_dbt(logger):
     os.system("clear")
 
     project_id = 'tech-mentorship-2024'
-    target_dataset = "rwde_mart"
+    target_dataset = "tech_mart"
 
     logger.info(f"Running entrypoint.py with project:{project_id} target: {target_dataset}")
     logger.info(bashrc_message.format(project=project_id, dataset=target_dataset))
